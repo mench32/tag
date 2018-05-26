@@ -9,18 +9,37 @@ const moveZero = (arr, step) => {
 
 	return result;
 }
-export default (state = [], action) => {
+
+const checkStatus = (table) => {
+	const arr = table.slice(0, -1);
+	return arr.every((item, i) => {
+		console.log(arr, item, i + 1)
+		return item === i + 1;
+	});
+};
+
+export default (state = { table: [], isDone: false }, action) => {
 	switch (action.type) {
 		case events.START: {
-			const newState = Array.from({ length: 15 }, (v, k) => ++k);
-			newState.sort(() => Math.random() - 0.5);
-			newState.push(0);
+			const table = Array.from({ length: 15 }, (v, k) => ++k);
 
-			return newState;
+			table.sort((a, b) => a - b);
+			// 	table.sort(() => Math.random() - 0.5);
+			table.push(0);
+			return {
+				table,
+				isDone: checkStatus(table)
+			}
 		}
+
 		case events.MOVE: {
-			return moveZero(state, action.step);
+			const table = moveZero(state.table, action.step);
+			return {
+				table,
+				isDone: checkStatus(table)
+			}
 		}
+
 		default: {
 			return state;
 		}

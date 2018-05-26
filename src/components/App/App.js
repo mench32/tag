@@ -14,8 +14,14 @@ export default class App extends Component {
 
 		return (
 			<div className="App">
-				<Table {...{ table, startAction, moveAction }} />
-				<Footer {...{ startAction }} />
+				<Table
+					{...{
+						table: table.table,
+						startAction,
+						moveAction
+					}}
+				/>
+				<Footer {...{ startAction, isDone: table.isDone, }} />
 			</div>
 		);
 	}

@@ -9,6 +9,7 @@ export default class Footer extends Component {
 	render() {
 		return (
 			<div className="Footer">
+				<div className="Status">{this.props.isDone ? 'Done' : 'Fail'}</div>
 				<Button onClick={this.handleClick}>Shuffle</Button>
 			</div>
 		);

@@ -14,9 +14,11 @@ export default class Table extends Component {
 	}
 
 	render() {
+		const { table, isDone } = this.props;
+
 		return (
 			<div className="Table">
-				{this.props.table.map((cell, i) => (
+				{table.map((cell, i) => (
 					<div
 						key={cell}
 						className="Cell"
