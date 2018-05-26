@@ -24,7 +24,7 @@ export default class Table extends Component {
 						className="Cell"
 						onClick={() => this.handleClick(cell, i)}
 					>
-						{!!cell && cell}
+						<div className="CellContent">{!!cell && cell}</div>
 					</div>
 				))}
 			</div>

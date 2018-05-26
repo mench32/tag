@@ -4,27 +4,60 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 320px;
-	height: 320px;
+	max-width: 480px;
+	width: 100%;
 	margin: 24px auto;
 	user-select: none;
 }
 
 .Cell {
+	width: 0%;
+	padding: calc(12.5% - 1px);
+	border: 1px solid #ccc;
+	cursor: pointer;
+	position: relative;
+	font-size: 64px;
+}
+
+.CellContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	width: 25%;
-	height: 25%;
-	border: 1px solid #ccc;
-	cursor: pointer;
+
+
 }
 .Cell:hover {
 	background-color: #eee;
 }
 
-.Cell:empty {
-	border: none;
+.CellContent:empty {
 	background-color: #ccc;
+}
+
+@media screen and (max-width: 414px) {
+	.Cell {
+		font-size: 48px;
+	}
+
+	.Cell:hover {
+		background-color: transparent !important;
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.Cell {
+		font-size: 32px;
+	}
+}
+
+@media screen and (max-width: 319px) {
+	.Cell {
+		font-size: 28px;
+	}
 }

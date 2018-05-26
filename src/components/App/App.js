@@ -12,7 +12,7 @@ export default class App extends Component {
 	}
 
 	render() {
-		const { table, shuffleAction, moveAction } = this.props;
+		const { table, shuffleAction, moveAction, backAction } = this.props;
 
 		return (
 			<div className="App">
@@ -23,7 +23,7 @@ export default class App extends Component {
 						moveAction
 					}}
 				/>
-				<Footer {...{ shuffleAction, isDone: table.isDone, }} />
+				<Footer {...{ shuffleAction, backAction, isDone: table.isDone, history: table.history }} />
 			</div>
 		);
 	}

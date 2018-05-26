@@ -2,3 +2,16 @@
 	margin-top: 24px;
 	text-align: center;
 }
+
+.Buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.Count {
+	min-width: 48px;
+	text-align: right;
+	margin-right: 4px;
+}

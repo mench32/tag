@@ -8,7 +8,8 @@ import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers';
 const state = {
 	table: {
-		table: JSON.parse(window.localStorage.getItem('table')) || []
+		table: JSON.parse(window.localStorage.getItem('table')) || [],
+		history: JSON.parse(window.localStorage.getItem('history')) || [],
 	}
 }
 const store = createStore(rootReducer, state);

@@ -22,6 +22,10 @@ const mapDispatchToProps = (dispatch) => ({
 	moveAction: (step) => dispatch({
 		type: events.MOVE,
 		step
+	}),
+	backAction: (step) => dispatch({
+		type: events.BACK,
+		step
 	})
 
 });
