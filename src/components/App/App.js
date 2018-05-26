@@ -15,11 +15,10 @@ export default class App extends Component {
 		return (
 			<div className="App">
 				<Table
-					{...{
-						table: table.table,
-						shuffleAction,
-						moveAction
-					}}
+					table={table.table}
+					history={table.history}
+					shuffleAction={shuffleAction}
+					moveAction={moveAction}
 				/>
 				<Footer {...{ shuffleAction, backAction, isDone: table.isDone, history: table.history }} />
 			</div>
