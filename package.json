@@ -2,9 +2,7 @@
   "name": "tag",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mench32.github.io/tag",
   "dependencies": {
-    "gh-pages": "^1.1.0",
     "keymirror": "^0.1.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
