@@ -1,0 +1,20 @@
+.Button {
+	border: none;
+	background-color: rgba(30,144,255, 1);
+	padding: 11px 16px 13px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	transition: background-color .12s;
+}
+.Button:hover {
+	background: rgba(30,144,255, .9);
+}
+
+.Button:active {
+	background: rgba(30,144,255, .8);
+}

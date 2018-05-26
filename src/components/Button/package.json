@@ -1,8 +1,8 @@
 {
-  "name": "tag",
+  "name": "button",
   "version": "1.0.0",
   "description": "",
-  "main": "Tag.js",
+  "main": "Button.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

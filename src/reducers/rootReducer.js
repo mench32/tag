@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import tag from './tagReducer';
+import table from './tableReducer';
 
 export default combineReducers({
-	tag
+	table
 });
