@@ -24,16 +24,29 @@ const createNewTable = () => {
 	table.sort(() => Math.random() - 0.5);
 	table.push(0);
 	window.localStorage.removeItem('table');
-
+	window.localStorage.removeItem('history');
 	return table;
 }
 
 export default (state = { table: [], isDone: false, history: [] }, action) => {
 	switch (action.type) {
+		case events.START: {
+			const newState = {}
+
+			if (!state.table.length) {
+				newState.table = createNewTable();
+				newState.history = [];
+			} else {
+				newState.table = state.table;
+				newState.history = state.history;
+			}
+			newState.isDone = checkStatus(newState.table);
+
+			return newState;
+		}
+
 		case events.SHUFFLE: {
 			const table = createNewTable();
-
-			window.localStorage.removeItem('history');
 
 			return {
 				table,

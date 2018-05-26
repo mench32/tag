@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent as Component } from 'react';
 import Button from '../Button';
 import './Footer.css';
 
@@ -10,14 +10,15 @@ export default class Footer extends Component {
 
 	render() {
 		const { isDone, history } = this.props;
+
 		return (
 			<div className="Footer">
-				<div className="Status">{isDone ? 'Done' : 'Fail'}</div>
 				<div className="Buttons">
-					<div className="Count">{!!history.length && history.length}</div>
 					<Button disabled={!history.length} onClick={this.handleBack}>{'<'}</Button>
+					<div className="Count">{!!history.length && history.length}</div>
 					<Button onClick={this.handleShuffle}>Shuffle</Button>
 				</div>
+				{isDone && <div className="Done">Done</div>}
 			</div>
 		);
 	}

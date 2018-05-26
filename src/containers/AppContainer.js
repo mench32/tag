@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent as Component } from 'react';
 import { connect } from 'react-redux';
 import App from '../components/App';
 import events from '../constants/events';
@@ -16,6 +16,9 @@ const mapStateToProps = ({ table }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+	startAction: () => dispatch({
+		type: events.START
+	}),
 	shuffleAction: () => dispatch({
 		type: events.SHUFFLE
 	}),

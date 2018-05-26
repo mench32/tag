@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent as Component } from 'react';
 import Table from '../Table';
 import Footer from '../Footer';
 import './App.css';
@@ -6,9 +6,7 @@ import './App.css';
 export default class App extends Component {
 
 	componentWillMount() {
-		if (!this.props.table.table || !this.props.table.table.length) {
-			this.props.shuffleAction();
-		}
+		this.props.startAction();
 	}
 
 	render() {
