@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import App from '../components/App';
-// import { startAction } from '../actions';
 import events from '../constants/events';
 
 class TableContainer extends Component {
@@ -17,8 +16,8 @@ const mapStateToProps = ({ table }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	startAction: () => dispatch({
-		type: events.START
+	shuffleAction: () => dispatch({
+		type: events.SHUFFLE
 	}),
 	moveAction: (step) => dispatch({
 		type: events.MOVE,

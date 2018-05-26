@@ -6,22 +6,24 @@ import './App.css';
 export default class App extends Component {
 
 	componentWillMount() {
-		this.props.startAction();
+		if (!this.props.table.table || !this.props.table.table.length) {
+			this.props.shuffleAction();
+		}
 	}
 
 	render() {
-		const { table, startAction, moveAction } = this.props;
+		const { table, shuffleAction, moveAction } = this.props;
 
 		return (
 			<div className="App">
 				<Table
 					{...{
 						table: table.table,
-						startAction,
+						shuffleAction,
 						moveAction
 					}}
 				/>
-				<Footer {...{ startAction, isDone: table.isDone, }} />
+				<Footer {...{ shuffleAction, isDone: table.isDone, }} />
 			</div>
 		);
 	}

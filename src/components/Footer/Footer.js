@@ -4,7 +4,7 @@ import './Footer.css';
 
 export default class Footer extends Component {
 
-	handleClick = () => this.props.startAction();
+	handleClick = () => this.props.shuffleAction();
 
 	render() {
 		return (

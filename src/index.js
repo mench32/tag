@@ -6,7 +6,12 @@ import { createStore } from 'redux';
 import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers';
-const store = createStore(rootReducer/* , state, applyMiddleware(ReduxThunk) */);
+const state = {
+	table: {
+		table: JSON.parse(window.localStorage.getItem('table')) || []
+	}
+}
+const store = createStore(rootReducer, state);
 
 ReactDOM.render(
 	<Provider store={store}>

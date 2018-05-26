@@ -14,7 +14,7 @@ export default class Table extends Component {
 	}
 
 	render() {
-		const { table, isDone } = this.props;
+		const { table } = this.props;
 
 		return (
 			<div className="Table">

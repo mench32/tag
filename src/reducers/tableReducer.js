@@ -18,14 +18,21 @@ const checkStatus = (table) => {
 	});
 };
 
+const createNewTable = () => {
+	const table = Array.from({ length: 15 }, (v, k) => ++k);
+	table.sort(() => Math.random() - 0.5);
+	table.push(0);
+	window.localStorage.removeItem('table');
+	return table;
+}
+
 export default (state = { table: [], isDone: false }, action) => {
 	switch (action.type) {
-		case events.START: {
-			const table = Array.from({ length: 15 }, (v, k) => ++k);
 
-			table.sort((a, b) => a - b);
-			// 	table.sort(() => Math.random() - 0.5);
-			table.push(0);
+
+		case events.SHUFFLE: {
+			const table = createNewTable();
+
 			return {
 				table,
 				isDone: checkStatus(table)
@@ -34,6 +41,7 @@ export default (state = { table: [], isDone: false }, action) => {
 
 		case events.MOVE: {
 			const table = moveZero(state.table, action.step);
+			window.localStorage.setItem('table', JSON.stringify(table));
 			return {
 				table,
 				isDone: checkStatus(table)
